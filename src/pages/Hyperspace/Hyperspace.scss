@@ -1,0 +1,108 @@
+$stars: 240;
+$starH: 300px;
+$length: 1000px;
+$startOffset: 500px;
+$spreadMax: 45px;
+$spreadMin: 15px;
+$duration: 6s;
+
+.hyperspace {
+  transform-style: preserve-3d;
+  margin: auto;
+  will-change: transform;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__animation {
+    animation: speed $duration cubic-bezier(0.8, 0.1, 0.9, 0.25) 1;
+  }
+  &__title {
+    margin-left: 30px;
+    font-weight: 900;
+    font-size: 150px;
+    line-height: 170px;
+    background-color: #ffffff;
+    background-image: linear-gradient(180deg, #1212e0, #ffffff 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 2;
+  }
+  &__star {
+    transform-style: preserve-3d;
+    background-image: radial-gradient(50% 75% at center, #fff, #88f, transparent);
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0;
+    transform-origin: 50% 0%;
+    width: 3px;
+    height: $starH;
+    top: 50%;
+    left: 50%;
+
+    &-animation {
+      animation: fadeIn $duration linear 1;
+      @for $i from 1 through $stars {
+        $transPt1: translateX(-50%)
+          rotateZ(360deg * random())
+          rotateX(90deg)
+          translateZ($spreadMin + (($spreadMax - $spreadMin) * random()));
+        $transPt2: translateY($length * random());
+        &:nth-of-type(#{$i}) {
+          transform: $transPt1 $transPt2;
+        }
+      }
+    }
+    @for $i from 1 through $stars/10 {
+      &:nth-of-type(#{$i}) {
+        border-radius: 50%;
+        opacity: 1;
+        width: 20px;
+        height: 20px;
+        top: random(40) * 1%;
+        left: random(100) * 1%;
+      }
+    }
+    @for $i from $stars/10 through $stars/5 {
+      &:nth-of-type(#{$i}) {
+        border-radius: 50%;
+        opacity: 1;
+        width: 20px;
+        height: 20px;
+        top: (random(55) + 60) * 1%;
+        left: random(100) * 1%;
+      }
+    }
+    @for $i from $stars/5 through $stars/4 {
+      &:nth-of-type(#{$i}) {
+        border-radius: 50%;
+        opacity: 1;
+        width: 20px;
+        height: 20px;
+        top: (random(45) + 15) * 1%;
+        left: random(3) * 1%;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  25%,
+  to {
+    opacity: 1;
+  }
+}
+@keyframes speed {
+  from {
+    // transform: translateZ(-$length + $startOffset);
+    transform: translateZ(-$length/2 + $startOffset);
+  }
+  75%,
+  to {
+    transform: translateZ($length);
+  }
+}
