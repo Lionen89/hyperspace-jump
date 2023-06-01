@@ -6,7 +6,7 @@ $spreadMax: 45px;
 $spreadMin: 15px;
 $duration: 6s;
 
-.hyperspace {
+.bit-buster {
   transform-style: preserve-3d;
   margin: auto;
   will-change: transform;
@@ -19,6 +19,7 @@ $duration: 6s;
     animation: speed $duration cubic-bezier(0.8, 0.1, 0.9, 0.25) 1;
   }
   &__title {
+    text-align: center;
     margin-left: 30px;
     font-weight: 900;
     font-size: 150px;
@@ -81,7 +82,17 @@ $duration: 6s;
         width: 20px;
         height: 20px;
         top: (random(45) + 15) * 1%;
-        left: random(3) * 1%;
+        left: random(15) * 1%;
+      }
+    }
+    @for $i from $stars/4 through $stars/3.2 {
+      &:nth-of-type(#{$i}) {
+        border-radius: 50%;
+        opacity: 1;
+        width: 20px;
+        height: 20px;
+        top: (random(45) + 15) * 1%;
+        left: random(15) + 85 * 1%;
       }
     }
   }
@@ -98,7 +109,6 @@ $duration: 6s;
 }
 @keyframes speed {
   from {
-    // transform: translateZ(-$length + $startOffset);
     transform: translateZ(-$length/2 + $startOffset);
   }
   75%,
