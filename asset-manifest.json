@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hyperspace-jump/static/css/main.2f76de9f.css",
+    "main.js": "/hyperspace-jump/static/js/main.de205f28.js",
+    "index.html": "/hyperspace-jump/index.html",
+    "main.2f76de9f.css.map": "/hyperspace-jump/static/css/main.2f76de9f.css.map",
+    "main.de205f28.js.map": "/hyperspace-jump/static/js/main.de205f28.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f76de9f.css",
+    "static/js/main.de205f28.js"
+  ]
+}
