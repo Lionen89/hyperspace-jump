@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-import './App.css';
 import BitBuster from './pages/BitBuster/BitBuster';
 import Technologies from './pages/Technologies/Technologies';
 

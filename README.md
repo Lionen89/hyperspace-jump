@@ -8,4 +8,4 @@
 
 - `npm start` - запуск сервера
 
-[Ссылка на задеплоенное приложение](https://lionen89.github.io/hyperspace-jump/)
+[Ссылка на задеплоенное приложение](https://nimble-twilight-4fd50c.netlify.app/)
