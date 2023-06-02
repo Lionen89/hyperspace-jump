@@ -55,7 +55,7 @@ $duration: 6s;
         }
       }
     }
-    @for $i from 1 through $stars/10 {
+    @for $i from 1 through calc($stars / 10) {
       &:nth-of-type(#{$i}) {
         border-radius: 50%;
         opacity: 1;
@@ -65,7 +65,7 @@ $duration: 6s;
         left: random(100) * 1%;
       }
     }
-    @for $i from $stars/10 through $stars/5 {
+    @for $i from calc($stars / 10) through calc($stars / 5) {
       &:nth-of-type(#{$i}) {
         border-radius: 50%;
         opacity: 1;
@@ -75,7 +75,7 @@ $duration: 6s;
         left: random(100) * 1%;
       }
     }
-    @for $i from $stars/5 through $stars/4 {
+    @for $i from calc($stars / 5) through calc($stars / 4) {
       &:nth-of-type(#{$i}) {
         border-radius: 50%;
         opacity: 1;
@@ -85,7 +85,7 @@ $duration: 6s;
         left: random(15) * 1%;
       }
     }
-    @for $i from $stars/4 through $stars/3.2 {
+    @for $i from calc($stars / 4) through calc($stars / 3.2) {
       &:nth-of-type(#{$i}) {
         border-radius: 50%;
         opacity: 1;
@@ -109,7 +109,7 @@ $duration: 6s;
 }
 @keyframes speed {
   from {
-    transform: translateZ(-$length/2 + $startOffset);
+    transform: translateZ(calc(-1 * $length / 2) + $startOffset);
   }
   75%,
   to {
